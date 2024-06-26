@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+input {
+  color: black;
+}
+
+textarea {
+  color: black;
+}
+
+select {
+  color: black;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
