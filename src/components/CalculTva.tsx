@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import calculPourcentage from "../utils/calculPourcentage";
 import ICalculTva from "../interfaces/ICalculTva";
 import ComponentInput from "./form/CompontentInput";
+import { UserContext } from "./context/ThemeUserProvider";
 
 
 //deux variables nombreACalculer et tva
@@ -41,10 +42,20 @@ const CalculTva: React.FC<any> = () => {
   // affichage
   // deux input fields
   //bouton de validation intituler calculer
+  const useContextValue = useContext(UserContext);
 
+  if (!useContextValue) {
+    throw new Error("useContext must be used within a UserProvider");
+  }
+
+function changerUserName (value: string) {
+  useContextValue?.setUser(value)
+}
   return (
     <>
       <div>
+      <div>{useContextValue?.user}</div>
+        <button onClick={() => changerUserName("Florian")}>Context</button>
         <input
           type="number"
           onChange={(e) =>

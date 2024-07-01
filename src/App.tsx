@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./styles/App.css";
+import "./styles/myStylesReact";
 // import {formatdate, formatmail} from './utils/formatStrings'
 import Greetings from "./components/Greetings";
 
@@ -20,6 +21,18 @@ import Post from "./components/Post";
 import ChatRoom from "./components/ChatRoom";
 
 import CalculTva from "./components/CalculTva";
+
+import UseRefV1 from "./components/UseRefV1";
+import UseRefV2 from "./components/UseRefV2";
+import UseRefV3 from "./components/UseRefV3";
+import UseRefV4 from "./components/UseRefV4";
+import UseRefV5 from "./components/UseRefV5";
+
+import UseReducerV1 from "./components/UseReducerV1";
+import UseContextV1 from "./components/UseContextV1";
+import { UserContext } from "./components/context/ThemeUserProvider";
+
+import UseMemoV1 from "./components/UseMemoV1";
 
 
 
@@ -53,27 +66,35 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CalculTva/>
+        {/* <UseRefV1 />
+        <UseRefV2 />
+        <UseRefV3 />
+        <UseRefV4 />
+        <UseRefV5 /> */}
+        <UseMemoV1/>
+        <UseReducerV1 />
+        <UseContextV1/>
+        {/* <CalculTva /> */}
         {/* Champ de saisie pour changer l'identifiant du post */}
-        <input
+        {/* <input
           type="text"
           value={idPostState}
           onChange={(e) => handleChange(e.target.value)}
-        ></input>
+        ></input> */}
         {/* Composant Post avec l'identifiant passé en prop */}
-        <Post postid={idPostState} />
+        {/* <Post postid={idPostState} /> */}
         {/* Composant Counter */}
-        <Counter />
+        {/* <Counter /> */}
         {/* Composant Greetings avec des props déstructurées */}
-        <Greetings {...greetObject} />
+        {/* <Greetings {...greetObject} /> */}
         {/* Un autre composant Post sans props, probablement à supprimer */}
-        <Post />
+        {/* <Post /> */}
         {/* Composant TestPassFunction avec une fonction passée en prop */}
-        <TestPassFunction
+        {/* <TestPassFunction
           testAlert={(value: string) => testAlertParent(value)}
-        />
+        /> */}
         {/* Composant NameList avec des tâches passées en props */}
-        <NameList {...listTask} />
+        {/* <NameList {...listTask} />
         <label>
           Choose the chat room:{" "}
           <select value={roomId} onChange={(e) => setRoomId(e.target.value)}>
@@ -81,7 +102,7 @@ function App() {
             <option value="travel">travel</option>
             <option value="music">music</option>
           </select>
-        </label>
+        </label> */}
 
         <ChatRoom roomId={roomId} />
         <img src={logo} className="App-logo" alt="logo" />

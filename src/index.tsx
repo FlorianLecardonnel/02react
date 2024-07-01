@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeUserProvider } from './components/context/ThemeUserProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+// le themeuserprovider
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeUserProvider>
+      <App />
+    </ThemeUserProvider>
   </React.StrictMode>
 );
 

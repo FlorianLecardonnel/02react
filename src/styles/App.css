@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+.webStyle {
+  background-color: red;
+}
+
+.blueInput {
+  background-color:blue;
+}
+
+.stateColor {
+  font-size: 40px;
+  background-color: blue;
+}
+
 input {
   color: black;
 }
